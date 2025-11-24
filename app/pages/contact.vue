@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Page: contact</div>
+  <div>
+    <h1>Contact Page</h1>
+  </div>
 </template>
 
 <style scoped></style>
