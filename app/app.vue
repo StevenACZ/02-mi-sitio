@@ -1,11 +1,15 @@
+<script lang="ts" setup>
+const count = ref(10);
+await sleep(2000);
+
+count.value = 50;
+</script>
+
 <template>
   <div>
-    <h1>Hello</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, id!
-      Quaerat adipisci tenetur aperiam consectetur quasi aut voluptatibus
-      debitis quidem placeat iste fugit molestiae ducimus, id doloribus quia. A,
-      officia.
-    </p>
+    <h1>Hello = {{ count }}</h1>
+    <button @click="count++">+</button>
   </div>
 </template>
+
+<style></style>
