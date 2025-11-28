@@ -3,7 +3,7 @@
     <ul>
       <li><NuxtLink to="/"> Home </NuxtLink></li>
       <li>
-        <NuxtLink :to="{ path: 'about' }"> About </NuxtLink>
+        <NuxtLink to="/about"> About </NuxtLink>
       </li>
       <li>
         <NuxtLink to="/pricing"> Princing </NuxtLink>

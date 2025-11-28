@@ -9,6 +9,13 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: "Mi tienda de servicios",
+      meta: [
+        {
+          name: "description",
+          content: "Bienvenido a mi tienda de servicios",
+        },
+      ],
       link: [
         {
           rel: "stylesheet",
@@ -24,4 +31,14 @@ export default defineNuxtConfig({
   //   preset: "static",
   //   static: true,
   // },
+
+  // Prerender - Todo el sitio
+  nitro: {
+    prerender: {
+      routes: ["/", "/about", "/contact", "/pricing", "products"],
+      ignore: ["/dashboard", "/dashboard/**"],
+      // Habilitar el crawling para descubrir enlaces automaticamente
+      crawlLinks: true,
+    },
+  },
 });
