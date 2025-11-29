@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/image"],
+  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
 
   app: {
     head: {
