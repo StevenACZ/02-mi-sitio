@@ -10,5 +10,6 @@
     </main>
 
     <!-- Footer -->
+    <SharedFooter />
   </div>
 </template>

@@ -6,9 +6,9 @@ const route = useRoute();
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Productos",
-    to: "/productos",
+    to: "/products",
     // icon: "i-lucide-book-open",
-    active: route.path.startsWith("/productos"),
+    active: route.path.startsWith("/products"),
   },
   {
     label: "Precios",
