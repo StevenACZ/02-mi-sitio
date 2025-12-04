@@ -136,34 +136,37 @@ const testimonials = ref([
 </script>
 
 <template>
-  <UPageSection
-    title="Características Destacadas"
-    description="Nuestros testimonios de clientes satisfechos"
-    headline="Testimonios"
-  />
-
-  <UPageColumns>
-    <UPageCard
-      variant="solid"
-      to="https://cloudflare.com"
-      icon="i-logos-cloudflare-icon"
-      title="LaunchPad de Workers de Cloudflare"
-      description="NuxtHub forma parte de la cohorte Launchpad de Workers de Cloudflare para garantizar que obtengas una experiencia de primera clase sobre la red de Cloudflare."
-      :ui="{ leadingIcon: 'size-10' }"
+  <div>
+    <UPageSection
+      title="Características Destacadas"
+      description="Nuestros testimonios de clientes satisfechos"
+      headline="Testimonios"
     />
 
-    <UPageCard
-      v-for="(testimonial, index) in testimonials"
-      :key="index"
-      variant="subtle"
-      :description="testimonial.quote"
-      :ui="{
-        description: 'before:content-[open-quote] after:content-[close-quote]',
-      }"
-    >
-      <template #footer>
-        <UUser v-bind="testimonial.user" size="xl" />
-      </template>
-    </UPageCard>
-  </UPageColumns>
+    <UPageColumns>
+      <UPageCard
+        variant="solid"
+        to="https://cloudflare.com"
+        icon="i-logos-cloudflare-icon"
+        title="LaunchPad de Workers de Cloudflare"
+        description="NuxtHub forma parte de la cohorte Launchpad de Workers de Cloudflare para garantizar que obtengas una experiencia de primera clase sobre la red de Cloudflare."
+        :ui="{ leadingIcon: 'size-10' }"
+      />
+
+      <UPageCard
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        variant="subtle"
+        :description="testimonial.quote"
+        :ui="{
+          description:
+            'before:content-[open-quote] after:content-[close-quote]',
+        }"
+      >
+        <template #footer>
+          <UUser v-bind="testimonial.user" size="xl" />
+        </template>
+      </UPageCard>
+    </UPageColumns>
+  </div>
 </template>

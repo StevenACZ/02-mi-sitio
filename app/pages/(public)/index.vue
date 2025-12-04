@@ -1,7 +1,7 @@
 <template>
   <HomeCTA />
 
-  <HomeFeatures class="my-10" />
+  <HomeFeatures class="mb-10" />
 
   <HomeTestimonials class="my-10" />
 
