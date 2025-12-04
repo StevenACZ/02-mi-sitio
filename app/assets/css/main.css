@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme {
+  /* --color-primary: #7d86fb;
+  --ui-primary: var(--color-primary); */
+}
+
+/* Variables CSS de Nuxt UI - DEBEN estar en :root */
+:root {
+  --ui-radius: 0.5rem;
+}

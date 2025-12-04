@@ -13,6 +13,9 @@
   <div>
     <h1>Products Page</h1>
   </div>
+
+  <u-button label="primary" color="primary" />
+  <u-button label="secondary" color="secondary" />
 </template>
 
 <style scoped></style>
