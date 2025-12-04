@@ -5,7 +5,7 @@
     <SharedHeader />
 
     <!-- Main -->
-    <main class="container mx-auto flex-1 mt-2">
+    <main class="container mx-auto flex-1 mt-8">
       <slot></slot>
     </main>
 

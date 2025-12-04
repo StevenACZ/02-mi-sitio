@@ -39,7 +39,7 @@ const responsiveMenu = ref([
 </script>
 
 <template>
-  <UHeader>
+  <UHeader class="min-h-16">
     <template #title>
       <IconsNuxtui class="h-6 w-auto" />
     </template>

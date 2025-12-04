@@ -1,10 +1,7 @@
 <template>
-  <div>
-    <h1>Home Page</h1>
+  <HomeCTA />
 
-    <UButton>
-      <UIcon name="i-lucide-lightbulb" class="size-5" />
-      Button
-    </UButton>
-  </div>
+  <HomeFeatures class="my-10" />
+
+  <HomeTestimonials class="my-10" />
 </template>
