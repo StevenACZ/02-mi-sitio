@@ -1,2 +1,6 @@
 ignoredBuiltDependencies:
   - vue-demi
+onlyBuiltDependencies:
+  - "@prisma/client"
+  - "@prisma/engines"
+  - "prisma"

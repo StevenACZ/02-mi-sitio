@@ -5,7 +5,13 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@prisma/nuxt",
+  ],
 
   app: {
     head: {
@@ -39,6 +45,15 @@ export default defineNuxtConfig({
       ignore: ["/dashboard", "/dashboard/**"],
       // Habilitar el crawling para descubrir enlaces automaticamente
       crawlLinks: true,
+    },
+  },
+
+  vite: {
+    resolve: {
+      alias: {
+        ".prisma/client/index-browser":
+          "./node_modules/.prisma/client/index-browser.js",
+      },
     },
   },
 });

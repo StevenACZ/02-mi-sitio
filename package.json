@@ -7,13 +7,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "prisma generate && mkdir -p node_modules/.prisma/client && ln -sf $(find node_modules -path '*/.prisma/client/index-browser.js' | head -1 | xargs realpath) node_modules/.prisma/client/index-browser.js && nuxt prepare"
   },
   "dependencies": {
     "@nuxt/eslint": "1.10.0",
+    "@nuxt/fonts": "^0.12.1",
     "@nuxt/icon": "2.1.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/ui": "^4.2.1",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "@prisma/client": "^6.19.0",
+    "@prisma/nuxt": "^0.3.0",
     "eslint": "^9.39.1",
     "nuxt": "^4.2.1",
     "vue": "^3.5.25",
@@ -21,7 +25,9 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@nuxt/vite-builder": "^4.2.1",
     "@tailwindcss/vite": "^4.1.17",
+    "prisma": "^6.19.0",
     "tailwindcss": "^4.1.17"
   }
 }

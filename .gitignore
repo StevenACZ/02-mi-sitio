@@ -25,3 +25,5 @@ logs
 
 # Claude Code local config
 .claude
+
+/app/generated/prisma
