@@ -7,7 +7,7 @@
 
 export const PAGINATION = {
   /** Default number of items per page */
-  DEFAULT_PAGE_SIZE: 20,
+  DEFAULT_PAGE_SIZE: 8,
 
   /** Minimum allowed page size */
   MIN_PAGE_SIZE: 1,
