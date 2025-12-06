@@ -1,75 +1,81 @@
-# Nuxt Minimal Starter
+# Mi Sitio - Nuxt 4 Full-Stack App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Modern full-stack website built with Nuxt 4, Prisma ORM, and Neon PostgreSQL database.
 
-## Setup
+## Tech Stack
 
-Make sure to install dependencies:
+- **Framework:** Nuxt 4
+- **UI Library:** Nuxt UI (Tailwind CSS 4)
+- **Database:** Neon PostgreSQL
+- **ORM:** Prisma
+- **Icons:** Nuxt Icon
+- **Images:** Nuxt Image
+
+## Quick Start
+
+### 1. Install Dependencies
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### 2. Configure Database
 
-Start the development server on `http://localhost:3000`:
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL="your-neon-database-url"
+```
+
+Get your Neon database URL from [neon.tech](https://neon.tech)
+
+### 3. Setup Database
 
 ```bash
-# npm
-npm run dev
+# Generate Prisma Client
+pnpm prisma generate
 
-# pnpm
+# Run migrations
+pnpm prisma migrate dev
+
+# Seed database (optional)
+pnpm seed
+```
+
+### 4. Start Development Server
+
+```bash
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Visit `http://localhost:3000`
 
-Build the application for production:
+## Available Scripts
 
-```bash
-# npm
-npm run build
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm seed` - Seed database with sample data
+- `pnpm prisma studio` - Open Prisma Studio (database GUI)
 
-# pnpm
-pnpm build
+## Project Structure
 
-# yarn
-yarn build
-
-# bun
-bun run build
+```
+├── app/
+│   ├── components/     # Vue components
+│   ├── pages/          # Route pages
+│   └── layouts/        # Layout components
+├── server/
+│   └── api/            # API endpoints
+├── prisma/
+│   └── schema.prisma   # Database schema
+└── lib/
+    └── prisma.ts       # Prisma client instance
 ```
 
-Locally preview production build:
+## Learn More
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Nuxt Documentation](https://nuxt.com/docs)
+- [Nuxt UI](https://ui.nuxt.com)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Neon Documentation](https://neon.tech/docs)
