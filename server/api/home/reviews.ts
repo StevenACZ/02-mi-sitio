@@ -1,4 +1,4 @@
-import prisma from "../../../lib/prisma";
+import prisma from "~~/lib/prisma";
 
 export default defineEventHandler(async (_event) => {
   const reviews = await prisma.siteReview.findMany({
