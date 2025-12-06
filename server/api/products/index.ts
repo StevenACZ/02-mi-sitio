@@ -1,4 +1,5 @@
 import prisma from "~~/lib/prisma";
+import { PAGINATION } from "~~/shared/constants";
 
 export default defineEventHandler(async (_event) => {
   const query = getQuery(_event);
@@ -6,7 +7,8 @@ export default defineEventHandler(async (_event) => {
   let limit = parseInt(query.limit as string);
   let offset = parseInt(query.offset as string);
 
-  if (isNaN(limit) || limit <= 1) limit = 10;
+  if (isNaN(limit) || limit <= PAGINATION.MIN_PAGE_SIZE)
+    limit = PAGINATION.DEFAULT_PAGE_SIZE;
   if (isNaN(offset) || offset < 0) offset = 0;
 
   const products = await prisma.product.findMany({

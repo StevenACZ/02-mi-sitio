@@ -1,16 +1,24 @@
 <script setup lang="ts">
-defineProps<{
-  total: number;
-  modelValue: number;
-}>();
+import { PAGINATION } from "~~/shared/constants";
+
+const props = withDefaults(
+  defineProps<{
+    total: number;
+    modelValue?: number;
+    perPage?: number;
+  }>(),
+  {
+    perPage: PAGINATION.DEFAULT_PAGE_SIZE,
+  }
+);
+
 const router = useRouter();
 const route = useRoute();
+
 const currentPage = computed(() => {
-  return parseInt(route.query.page as string) || 1;
+  return parseInt(route.query.page as string) || PAGINATION.DEFAULT_PAGE;
 });
-const perPage = computed(() => {
-  return parseInt(route.query.perPage as string) || 10;
-});
+
 const handlePageUpdate = (page: number) => {
   router.push({ query: { page: page.toString() } });
 };
@@ -21,10 +29,9 @@ const handlePageUpdate = (page: number) => {
     <UPagination
       :total="total"
       :page="currentPage"
-      :per-page="perPage"
+      :items-per-page="props.perPage"
       show-edges
       @update:page="handlePageUpdate"
     />
-    <!-- @update:model-value="router.push({ query: { page: $event.toString() } })" -->
   </div>
 </template>
